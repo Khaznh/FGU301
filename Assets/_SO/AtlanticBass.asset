@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17053be47d42084fac77bf0e85a5014, type: 3}
+  m_Name: AtlanticBass
+  m_EditorClassIdentifier: 
+  fishPrefap: {fileID: 3997611014030755165, guid: 6615f6070087b664399b0e34d6551766, type: 3}
+  fishSpeed: 20
+  fishChangeDirTimer: 4
+  lostProgress: 3
+  gainsProgress: 4
