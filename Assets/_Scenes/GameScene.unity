@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4378e1674f6280141baaf3267d858976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishIcon: {fileID: 0}
+  fishIcon: {fileID: 890390807}
   fishGamePlay: {fileID: 0}
   iWarn: {fileID: 0}
   playerMovement: {fileID: 0}
