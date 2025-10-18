@@ -34,6 +34,11 @@ public class PlayerNormalState : State
         {
             ((Player)entity).fishIcon.SetActive(false);
         }
+
+        if (((Player)entity).input.Inventory.Inven.WasPressedThisFrame())
+        {
+            fsm.ChangeState(((Player)entity).playerInventoryState);
+        }
     }
 
     public override void Exit()

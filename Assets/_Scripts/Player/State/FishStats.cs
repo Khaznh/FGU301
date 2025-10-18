@@ -8,4 +8,7 @@ public class FishStats : ScriptableObject
     public float fishChangeDirTimer;
     public float lostProgress;
     public float gainsProgress;
+
+    [Header("Fish Item Info")]
+    public Item fishItem;
 }
