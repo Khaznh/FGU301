@@ -4,6 +4,7 @@ public class Player : Entity
 {
     public GameObject inventoryCanva;
     public GameObject mainInvenGroup;
+    public GameObject inventoryManager;
 
     [SerializeField] public GameObject fishIcon;
     [SerializeField] public GameObject fishGamePlay;
@@ -35,12 +36,21 @@ public class Player : Entity
     private void Awake()
     {
         inventoryCanva = GameObject.Find("InventoryCanvas");
+        inventoryManager = GameObject.Find("InventoryManager");
 
         if (inventoryCanva == null)
         {
             Debug.LogError("Inventory Canva is not assigned in the Player script. InventoryCanva can be found in Prefaps");
             return;
         }
+
+        if (inventoryManager == null)
+        {
+            Debug.LogError("Inventory Manager is not found in the scene. Please make sure there is an InventoryManager in the scene.");
+            return;
+        }
+
+
 
         mainInvenGroup = inventoryCanva.transform.Find("MainInvenGroup").gameObject;
 

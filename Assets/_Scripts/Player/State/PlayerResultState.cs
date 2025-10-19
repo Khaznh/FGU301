@@ -10,6 +10,9 @@ public class PlayerResultState : State
     {
         base.Enter();
         Debug.Log(((Player)entity).fishStats);
+
+        ((Player)entity).inventoryManager.GetComponent<InventoryManager>().AddItem(((Player)entity).fishStats.fishItem);
+
         fsm.ChangeState(((Player)entity).playerNormalState);
     }
 
