@@ -14,7 +14,6 @@ public class Player : Entity
     public PlayerMovement playerMovement;
     public PlayerAnimation playerAnimation;
     private PlayerCollider playerCollider;
-    public PlayerSpawnBait PlayerSpawnBait;
 
     public bool onNearPort = false;
 

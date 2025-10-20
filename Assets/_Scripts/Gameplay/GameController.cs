@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     private float timer = 0.0f;
     private bool firstTime = true;
 
+    public Vector3 playerPositionToSpawn;
+
 
     private void Awake()
     {
@@ -33,7 +35,7 @@ public class GameController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 60 * 15)
+        if (timer > 30)
         {
             index++;
             if (index >= arrSeasons.Length)
@@ -44,8 +46,11 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ChangeToGameScene()
+    public void ChangeToGameScene(Vector3 spawnPos)
     {
+        playerPositionToSpawn = spawnPos;
+
+
         if (firstTime)
         {
             index = 0;
@@ -55,9 +60,28 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(arrSeasons[index]);
     }
 
+    public void ChangeToGameSceneFromStart()
+    {
+        playerPositionToSpawn = new Vector3(-12, -1, 0);
+
+        if (firstTime)
+        {
+            index = 0;
+            firstTime = false;
+        }
+        SceneManager.LoadScene(arrSeasons[index]);
+    }
+
+    public void ChangeToGameSceneFromHome()
+    {
+        playerPositionToSpawn = new Vector3(30, -8, 0);
+        SceneManager.LoadScene(arrSeasons[index]);
+    }
+
     public void ChangeToHomeScene()
     {
-        SceneManager.LoadScene("HomeScene");
+        playerPositionToSpawn = new Vector3(-13.5f, 4.5f, 0);
+        SceneManager.LoadScene("Shop");
     }
 
     public void ExitGame()

@@ -341,7 +341,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1176914940}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: ChangeToGameScene
+        m_MethodName: ChangeToGameSceneFromStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -881,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dcdb5fe8cba334c91a1487d99f46df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPositionToSpawn: {x: 0, y: 0, z: 0}
 --- !u!1 &1221466397
 GameObject:
   m_ObjectHideFlags: 0

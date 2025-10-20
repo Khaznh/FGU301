@@ -2,11 +2,25 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance;
+
     public InventorySlot[] inventorySlots;
     public GameObject invenItemPrefaps;
     public int limitCount = 99;
 
     private int selectedSlotIndex = 0;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {

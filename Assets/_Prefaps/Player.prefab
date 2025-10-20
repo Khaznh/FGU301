@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 7003045950940034951}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,7 +317,6 @@ MonoBehaviour:
   iWarn: {fileID: 0}
   playerMovement: {fileID: 0}
   playerAnimation: {fileID: 0}
-  PlayerSpawnBait: {fileID: 0}
   onNearPort: 0
   playerSpawnBait: {fileID: 0}
   pondTransform: {fileID: 0}
