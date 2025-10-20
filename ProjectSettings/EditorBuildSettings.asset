@@ -8,12 +8,30 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainMenu.unity
     guid: b7ae3cf4c1a928f46947decc4e12fffc
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/GameScene.unity
     guid: 74987bf5c58e611478a0ab32a0f9ec2e
+  - enabled: 1
+    path: Assets/_Scenes/KhanhPN/AutumnScene.unity
+    guid: c18ce348dfcb6c541875481013aad644
+  - enabled: 1
+    path: Assets/_Scenes/KhanhPN/Shop.unity
+    guid: 728e476a4d3f98c4485623d198d0a59e
+  - enabled: 1
+    path: Assets/_Scenes/KhanhPN/SpringScene.unity
+    guid: f8a8638e7653c6348b7744bec6ea60bb
+  - enabled: 1
+    path: Assets/_Scenes/KhanhPN/StartScene.unity
+    guid: 1d8c1222cca4c1e49902d45e56ea9760
+  - enabled: 1
+    path: Assets/_Scenes/KhanhPN/SummerScene.unity
+    guid: 90ec5984bd7e14545abd82328d62941e
+  - enabled: 1
+    path: Assets/_Scenes/KhanhPN/WinnterScene.unity
+    guid: b25fd03738585d84da59f2fdcd984772
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
