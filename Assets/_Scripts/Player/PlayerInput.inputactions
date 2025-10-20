@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "PlayerInput",
     "maps": [
         {
@@ -138,6 +139,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Inventory",
+            "id": "c33fb24f-1245-42f5-b02f-a5edbe4867de",
+            "actions": [
+                {
+                    "name": "Inven",
+                    "type": "Button",
+                    "id": "6c197400-9665-4186-9dc0-2ea053c86f12",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "79958b15-84cd-4e3d-88fc-911a4e3619b9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inven",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

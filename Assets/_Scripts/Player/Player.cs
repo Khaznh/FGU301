@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    public GameObject inventoryCanva;
+    public GameObject mainInvenGroup;
+    public GameObject inventoryManager;
+
     [SerializeField] public GameObject fishIcon;
     [SerializeField] public GameObject fishGamePlay;
     [SerializeField] public GameObject iWarn;
@@ -10,7 +14,6 @@ public class Player : Entity
     public PlayerMovement playerMovement;
     public PlayerAnimation playerAnimation;
     private PlayerCollider playerCollider;
-    public PlayerSpawnBait PlayerSpawnBait;
 
     public bool onNearPort = false;
 
@@ -20,6 +23,7 @@ public class Player : Entity
     public PlayerSpawnBait playerSpawnBait;
     public PlayerFishingState playerFishingState;
     public PlayerResultState playerResultState;
+    public PlayerInventoryState playerInventoryState;
 
     public Transform pondTransform;
     public GameObject bait;
@@ -30,6 +34,25 @@ public class Player : Entity
 
     private void Awake()
     {
+        inventoryCanva = GameObject.Find("InventoryCanvas");
+        inventoryManager = GameObject.Find("InventoryManager");
+
+        if (inventoryCanva == null)
+        {
+            Debug.LogError("Inventory Canva is not assigned in the Player script. InventoryCanva can be found in Prefaps");
+            return;
+        }
+
+        if (inventoryManager == null)
+        {
+            Debug.LogError("Inventory Manager is not found in the scene. Please make sure there is an InventoryManager in the scene.");
+            return;
+        }
+
+
+
+        mainInvenGroup = inventoryCanva.transform.Find("MainInvenGroup").gameObject;
+
         fishGamePlay = transform.Find("Canvas").gameObject;
         fishIcon = transform.Find("FishingIcon").gameObject;
         iWarn = transform.Find("IconW").gameObject;
@@ -48,6 +71,7 @@ public class Player : Entity
         fishIcon.SetActive(false);
         fishGamePlay.SetActive(false);
         iWarn.SetActive(false);
+        mainInvenGroup.SetActive(false);
 
         input = new PlayerInput();
         fsm = new FSM();
@@ -55,6 +79,7 @@ public class Player : Entity
         playerCastState = new PlayerCastState(fsm,this);
         playerFishingState = new PlayerFishingState(fsm,this);
         playerResultState = new PlayerResultState(fsm,this);
+        playerInventoryState = new PlayerInventoryState(fsm,this);
 
         fsm.Init(playerNormalState);
     }
