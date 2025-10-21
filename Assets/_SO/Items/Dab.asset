@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Dab
   m_EditorClassIdentifier: 
   fishImg: {fileID: -3637470110828976721, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: Dab
   canStack: 0

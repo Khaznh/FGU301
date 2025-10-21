@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 30)
+        if (timer > 60 * 4)
         {
             index++;
             if (index >= arrSeasons.Length)

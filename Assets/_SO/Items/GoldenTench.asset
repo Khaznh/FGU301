@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GoldenTench
   m_EditorClassIdentifier: 
   fishImg: {fileID: 3814286295184664786, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: GoldenTench
   canStack: 0

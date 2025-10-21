@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 1454166844383310825}
   - component: {fileID: 7685351820252445398}
   - component: {fileID: 7003045950940034951}
+  - component: {fileID: 5276022152189364273}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -312,12 +313,14 @@ MonoBehaviour:
   inventoryCanva: {fileID: 0}
   mainInvenGroup: {fileID: 0}
   inventoryManager: {fileID: 0}
+  shop: {fileID: 0}
   fishIcon: {fileID: 2690887217080411171}
   fishGamePlay: {fileID: 0}
   iWarn: {fileID: 0}
   playerMovement: {fileID: 0}
   playerAnimation: {fileID: 0}
   onNearPort: 0
+  onNearShop: 0
   playerSpawnBait: {fileID: 0}
   pondTransform: {fileID: 0}
   bait: {fileID: 0}
@@ -350,6 +353,19 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_SortAtRoot: 0
+--- !u!114 &5276022152189364273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802022158438240885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a8b5e17e1ddc34cbf5f6f646829169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 0
 --- !u!1 &2279118238654406174
 GameObject:
   m_ObjectHideFlags: 0

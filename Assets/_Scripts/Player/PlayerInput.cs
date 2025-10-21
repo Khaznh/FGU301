@@ -257,6 +257,65 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Shoping"",
+            ""id"": ""8ee5a6ee-c5e6-4745-8b64-8636d6a13823"",
+            ""actions"": [
+                {
+                    ""name"": ""Stop"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee243bec-74da-4c28-9e5c-699f93142533"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""12e082cb-60c3-4f1c-8124-ea3b9b983fcc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5fa830af-c304-481e-870a-b917170425b6"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e14640d-15de-4c8a-af7b-e1870af73fb8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c493a135-930a-4df9-b360-363a0c0bcc3c"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -271,6 +330,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Inventory
         m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
         m_Inventory_Inven = m_Inventory.FindAction("Inven", throwIfNotFound: true);
+        // Shoping
+        m_Shoping = asset.FindActionMap("Shoping", throwIfNotFound: true);
+        m_Shoping_Stop = m_Shoping.FindAction("Stop", throwIfNotFound: true);
+        m_Shoping_Start = m_Shoping.FindAction("Start", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -278,6 +341,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_Movement.enabled, "This will cause a leak and performance issues, PlayerInput.Movement.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_GamePlay.enabled, "This will cause a leak and performance issues, PlayerInput.GamePlay.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Inventory.enabled, "This will cause a leak and performance issues, PlayerInput.Inventory.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Shoping.enabled, "This will cause a leak and performance issues, PlayerInput.Shoping.Disable() has not been called.");
     }
 
     /// <summary>
@@ -648,6 +712,113 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="InventoryActions" /> instance referencing this action map.
     /// </summary>
     public InventoryActions @Inventory => new InventoryActions(this);
+
+    // Shoping
+    private readonly InputActionMap m_Shoping;
+    private List<IShopingActions> m_ShopingActionsCallbackInterfaces = new List<IShopingActions>();
+    private readonly InputAction m_Shoping_Stop;
+    private readonly InputAction m_Shoping_Start;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Shoping".
+    /// </summary>
+    public struct ShopingActions
+    {
+        private @PlayerInput m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public ShopingActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Shoping/Stop".
+        /// </summary>
+        public InputAction @Stop => m_Wrapper.m_Shoping_Stop;
+        /// <summary>
+        /// Provides access to the underlying input action "Shoping/Start".
+        /// </summary>
+        public InputAction @Start => m_Wrapper.m_Shoping_Start;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Shoping; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="ShopingActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(ShopingActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="ShopingActions" />
+        public void AddCallbacks(IShopingActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ShopingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ShopingActionsCallbackInterfaces.Add(instance);
+            @Stop.started += instance.OnStop;
+            @Stop.performed += instance.OnStop;
+            @Stop.canceled += instance.OnStop;
+            @Start.started += instance.OnStart;
+            @Start.performed += instance.OnStart;
+            @Start.canceled += instance.OnStart;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="ShopingActions" />
+        private void UnregisterCallbacks(IShopingActions instance)
+        {
+            @Stop.started -= instance.OnStop;
+            @Stop.performed -= instance.OnStop;
+            @Stop.canceled -= instance.OnStop;
+            @Start.started -= instance.OnStart;
+            @Start.performed -= instance.OnStart;
+            @Start.canceled -= instance.OnStart;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ShopingActions.UnregisterCallbacks(IShopingActions)" />.
+        /// </summary>
+        /// <seealso cref="ShopingActions.UnregisterCallbacks(IShopingActions)" />
+        public void RemoveCallbacks(IShopingActions instance)
+        {
+            if (m_Wrapper.m_ShopingActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="ShopingActions.AddCallbacks(IShopingActions)" />
+        /// <seealso cref="ShopingActions.RemoveCallbacks(IShopingActions)" />
+        /// <seealso cref="ShopingActions.UnregisterCallbacks(IShopingActions)" />
+        public void SetCallbacks(IShopingActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ShopingActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ShopingActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="ShopingActions" /> instance referencing this action map.
+    /// </summary>
+    public ShopingActions @Shoping => new ShopingActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Movement" which allows adding and removing callbacks.
     /// </summary>
@@ -699,5 +870,27 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInven(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Shoping" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="ShopingActions.AddCallbacks(IShopingActions)" />
+    /// <seealso cref="ShopingActions.RemoveCallbacks(IShopingActions)" />
+    public interface IShopingActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Stop" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnStop(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Start" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnStart(InputAction.CallbackContext context);
     }
 }

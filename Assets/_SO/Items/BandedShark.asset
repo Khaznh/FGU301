@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BandedShark
   m_EditorClassIdentifier: 
   fishImg: {fileID: 8910149649331195418, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: BandedShark
   canStack: 0

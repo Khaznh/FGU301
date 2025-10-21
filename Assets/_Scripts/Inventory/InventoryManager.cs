@@ -75,6 +75,29 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public bool DeleteItem(string itemName)
+    {
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            DragableItem existingItem = slot.GetComponentInChildren<DragableItem>();
+            if (existingItem != null && existingItem.item.description == itemName)
+            {
+                if (existingItem.count > 1)
+                {
+                    existingItem.count--;
+                    existingItem.RefreshCount();
+                }
+                else
+                {
+                    Destroy(existingItem.gameObject);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void SpawnNewItem(Item item, InventorySlot inventorySlot)
     {
         GameObject newItem = Instantiate(invenItemPrefaps, inventorySlot.transform);

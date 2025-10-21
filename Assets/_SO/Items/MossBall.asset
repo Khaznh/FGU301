@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MossBall
   m_EditorClassIdentifier: 
   fishImg: {fileID: -5326471240119406742, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: MossBall
   canStack: 1

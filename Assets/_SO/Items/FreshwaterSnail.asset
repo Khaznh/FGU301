@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FreshwaterSnail
   m_EditorClassIdentifier: 
   fishImg: {fileID: 2915095158503469359, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: FreshwaterSnail
   canStack: 0
