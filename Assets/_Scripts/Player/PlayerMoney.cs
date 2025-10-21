@@ -5,6 +5,8 @@ public class PlayerMoney : MonoBehaviour
 {
     public static PlayerMoney instance;
     public int currentMoney = 0;
+    public int maxHealth = 10;
+    public int currentHealth;
 
     private TextMeshProUGUI moneyText;
 
@@ -20,12 +22,16 @@ public class PlayerMoney : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        currentHealth = maxHealth;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moneyText.text = currentMoney.ToString();
+        HealthBar.instance.SetMaxHealth(maxHealth);
+        HealthBar.instance.SetCurrentHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -50,5 +56,27 @@ public class PlayerMoney : MonoBehaviour
         }
 
         moneyText.text = currentMoney.ToString();
+    }
+
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        HealthBar.instance.IncreaseMaxHealth(amount);
+    }
+
+    public void HealHealth()
+    {
+        currentHealth = maxHealth;
+        HealthBar.instance.SetCurrentHealth(currentHealth);
+    }
+
+    public void ReduceHealth(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+        HealthBar.instance.SetCurrentHealth(currentHealth);
     }
 }

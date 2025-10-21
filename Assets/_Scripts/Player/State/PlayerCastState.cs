@@ -24,24 +24,38 @@ public class PlayerCastState : State
 
 
         Vector3 dirToPond = ((Player)entity).transform.position - ((Player)entity).pondTransform.position;
-        
+
+        if (PlayerMoney.instance.currentHealth >= 1)
+        {
+            PlayerMoney.instance.ReduceHealth(1);
+        }
+        else
+        {
+            fsm.ChangeState(((Player)entity).playerNormalState);
+            return;
+        }
+
+
         if (Mathf.Abs(dirToPond.x) > Mathf.Abs(dirToPond.y))
         {
             if (dirToPond.x < 0)
             {
-                dirToRotate = new Vector2(1,0);
-            } else
-            {
-                dirToRotate = new Vector2(-1,0);
+                dirToRotate = new Vector2(1, 0);
             }
-        } else
+            else
+            {
+                dirToRotate = new Vector2(-1, 0);
+            }
+        }
+        else
         {
             if (dirToPond.y < 0)
             {
-                dirToRotate = new Vector2(0,1);
-            } else
+                dirToRotate = new Vector2(0, 1);
+            }
+            else
             {
-                dirToRotate = new Vector2(0,-1);
+                dirToRotate = new Vector2(0, -1);
             }
         }
 
@@ -84,7 +98,7 @@ public class PlayerCastState : State
 
             fsm.ChangeState(((Player)entity).playerFishingState);
         }
-    
+
         if (timer > randomTImer + catchTime)
         {
             fsm.ChangeState(((Player)entity).playerNormalState);

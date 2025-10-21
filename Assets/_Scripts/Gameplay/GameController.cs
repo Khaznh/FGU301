@@ -84,6 +84,18 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Shop");
     }
 
+    public void ChangeFromHomeToMain()
+    {
+        playerPositionToSpawn = new Vector3(-12, -1, 0);
+        SceneManager.LoadScene(arrSeasons[index]);
+    }
+
+    public void ChangeMainToHOme()
+    {
+        playerPositionToSpawn = new Vector3(-9, -9, 0);
+        SceneManager.LoadScene("HomeScene");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
