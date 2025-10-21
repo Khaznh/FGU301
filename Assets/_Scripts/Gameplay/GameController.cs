@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 30)
+        if (timer > 60 * 4)
         {
             index++;
             if (index >= arrSeasons.Length)
@@ -82,6 +82,18 @@ public class GameController : MonoBehaviour
     {
         playerPositionToSpawn = new Vector3(-13.5f, 4.5f, 0);
         SceneManager.LoadScene("Shop");
+    }
+
+    public void ChangeFromHomeToMain()
+    {
+        playerPositionToSpawn = new Vector3(-12, -1, 0);
+        SceneManager.LoadScene(arrSeasons[index]);
+    }
+
+    public void ChangeMainToHOme()
+    {
+        playerPositionToSpawn = new Vector3(-9, -9, 0);
+        SceneManager.LoadScene("HomeScene");
     }
 
     public void ExitGame()

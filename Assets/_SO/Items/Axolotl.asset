@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Axolotl
   m_EditorClassIdentifier: 
   fishImg: {fileID: -8824582518204492128, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: Axolotl
   canStack: 0

@@ -171,6 +171,65 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Shoping",
+            "id": "8ee5a6ee-c5e6-4745-8b64-8636d6a13823",
+            "actions": [
+                {
+                    "name": "Stop",
+                    "type": "Button",
+                    "id": "ee243bec-74da-4c28-9e5c-699f93142533",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "12e082cb-60c3-4f1c-8124-ea3b9b983fcc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5fa830af-c304-481e-870a-b917170425b6",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e14640d-15de-4c8a-af7b-e1870af73fb8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c493a135-930a-4df9-b360-363a0c0bcc3c",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

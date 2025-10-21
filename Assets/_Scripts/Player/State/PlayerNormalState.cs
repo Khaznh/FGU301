@@ -35,6 +35,11 @@ public class PlayerNormalState : State
             ((Player)entity).fishIcon.SetActive(false);
         }
 
+        if (((Player)entity).onNearShop && ((Player)entity).input.Shoping.Start.WasPressedThisFrame())
+        {
+            fsm.ChangeState(((Player)entity).playerTradingState);
+        }
+
         if (((Player)entity).input.Inventory.Inven.WasPressedThisFrame())
         {
             fsm.ChangeState(((Player)entity).playerInventoryState);

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlueGill
   m_EditorClassIdentifier: 
   fishImg: {fileID: -1551483179274217568, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: BlueGill
   canStack: 0

@@ -6,10 +6,12 @@ public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
     private CinemachineCamera cinemachineCamera;
+    private GameObject player;
 
     private void Awake()
     {
         cinemachineCamera = GameObject.Find("CinemachineCamera").GetComponent<CinemachineCamera>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
@@ -19,7 +21,14 @@ public class PlayerSpawner : MonoBehaviour
         if (spawnPos == Vector3.zero)
             spawnPos = transform.position;
 
-        GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        if (player == null)
+        {
+            GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+            cinemachineCamera.Follow = newPlayer.transform;
+            return;
+        }
+
+        player.transform.position = spawnPos;        
         cinemachineCamera.Follow = player.transform;
     }
 }

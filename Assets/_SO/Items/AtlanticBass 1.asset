@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AtlanticBass 1
   m_EditorClassIdentifier: 
   fishImg: {fileID: 426530946029428696, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: AtlanticBass
   canStack: 0

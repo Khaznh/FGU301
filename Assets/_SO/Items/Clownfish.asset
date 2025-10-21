@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Clownfish
   m_EditorClassIdentifier: 
   fishImg: {fileID: 996521591760364865, guid: ded0e313b525e15449b9015fbf8469f2, type: 3}
-  description: 
+  description: Clownfish
   canStack: 0

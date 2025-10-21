@@ -5,6 +5,7 @@ public class Player : Entity
     public GameObject inventoryCanva;
     public GameObject mainInvenGroup;
     public GameObject inventoryManager;
+    public GameObject shop;
 
     [SerializeField] public GameObject fishIcon;
     [SerializeField] public GameObject fishGamePlay;
@@ -16,6 +17,7 @@ public class Player : Entity
     private PlayerCollider playerCollider;
 
     public bool onNearPort = false;
+    public bool onNearShop = false;
 
     public FSM fsm;
     public PlayerNormalState playerNormalState;
@@ -24,6 +26,7 @@ public class Player : Entity
     public PlayerFishingState playerFishingState;
     public PlayerResultState playerResultState;
     public PlayerInventoryState playerInventoryState;
+    public PlayerTradingState playerTradingState;
 
     public Transform pondTransform;
     public GameObject bait;
@@ -52,6 +55,7 @@ public class Player : Entity
 
 
         mainInvenGroup = inventoryCanva.transform.Find("MainInvenGroup").gameObject;
+        shop = inventoryCanva.transform.Find("Shop").gameObject;
 
         fishGamePlay = transform.Find("Canvas").gameObject;
         fishIcon = transform.Find("FishingIcon").gameObject;
@@ -80,6 +84,7 @@ public class Player : Entity
         playerFishingState = new PlayerFishingState(fsm,this);
         playerResultState = new PlayerResultState(fsm,this);
         playerInventoryState = new PlayerInventoryState(fsm,this);
+        playerTradingState = new PlayerTradingState(fsm,this);
 
         fsm.Init(playerNormalState);
     }
