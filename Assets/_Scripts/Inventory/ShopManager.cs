@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(10);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellAxolotl()
@@ -18,6 +19,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(25);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellBandedShark()
@@ -27,6 +29,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(25);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellBlueGill()
@@ -36,6 +39,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(50);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellClownfish()
@@ -45,6 +49,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(75);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellDab()
@@ -54,6 +59,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(50);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellFreshwaterSnail()
@@ -63,6 +69,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(25);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellGoldenTench()
@@ -72,6 +79,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(30);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellGuppy()
@@ -81,6 +89,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(20);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellMossBall()
@@ -90,6 +99,7 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(1);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 
     public void SellSeaSpider()
@@ -99,5 +109,6 @@ public class ShopManager : MonoBehaviour
         {
             PlayerMoney.instance.AddMoney(10);
         }
+        AudioManager.Instance.PlaySFX("Buy");
     }
 }
