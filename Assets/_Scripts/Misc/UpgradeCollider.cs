@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopCollider : MonoBehaviour
+public class UpgradeCollider : MonoBehaviour
 {
     private GameObject icon;
 
@@ -18,7 +18,7 @@ public class ShopCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,7 +26,7 @@ public class ShopCollider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             icon.SetActive(true);
-            collision.GetComponent<Player>().onNearShop = true;
+            collision.GetComponent<Player>().onNearTrading = true;
         }
     }
 
@@ -35,7 +35,7 @@ public class ShopCollider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             icon.SetActive(false);
-            collision.GetComponent<Player>().onNearShop = false;
+            collision.GetComponent<Player>().onNearTrading = false;
         }
     }
 }

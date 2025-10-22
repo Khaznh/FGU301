@@ -16,7 +16,7 @@ public class FishingGamePlay : MonoBehaviour
     public float fishSpeed = 20f;
     public float fishChangeDirTimer = 4f;
 
-    [SerializeField] private float moveBarSpeed = 120f;
+    [SerializeField] public float moveBarSpeed;
     
     private float catchProgress = 0f;
     public float lostProgress = 3f;

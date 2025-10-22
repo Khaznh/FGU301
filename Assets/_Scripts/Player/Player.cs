@@ -6,6 +6,7 @@ public class Player : Entity
     public GameObject mainInvenGroup;
     public GameObject inventoryManager;
     public GameObject shop;
+    public GameObject upgrade;
 
     [SerializeField] public GameObject fishIcon;
     [SerializeField] public GameObject fishGamePlay;
@@ -18,6 +19,7 @@ public class Player : Entity
 
     public bool onNearPort = false;
     public bool onNearShop = false;
+    public bool onNearTrading = false;
 
     public FSM fsm;
     public PlayerNormalState playerNormalState;
@@ -27,6 +29,7 @@ public class Player : Entity
     public PlayerResultState playerResultState;
     public PlayerInventoryState playerInventoryState;
     public PlayerTradingState playerTradingState;
+    public PlayerUpgradeState playerUpgradeState;
 
     public Transform pondTransform;
     public GameObject bait;
@@ -34,6 +37,7 @@ public class Player : Entity
     public FishingGamePlay fishingGamePlay;
 
     public FishStats fishStats;
+    public float moveBarSpeed = 120f;
 
     private void Awake()
     {
@@ -53,9 +57,10 @@ public class Player : Entity
         }
 
 
-
+       
         mainInvenGroup = inventoryCanva.transform.Find("MainInvenGroup").gameObject;
         shop = inventoryCanva.transform.Find("Shop").gameObject;
+        upgrade = inventoryCanva.transform.Find("Upgrade").gameObject;
 
         fishGamePlay = transform.Find("Canvas").gameObject;
         fishIcon = transform.Find("FishingIcon").gameObject;
@@ -85,6 +90,7 @@ public class Player : Entity
         playerResultState = new PlayerResultState(fsm,this);
         playerInventoryState = new PlayerInventoryState(fsm,this);
         playerTradingState = new PlayerTradingState(fsm,this);
+        playerUpgradeState = new PlayerUpgradeState(fsm,this);
 
         fsm.Init(playerNormalState);
     }
