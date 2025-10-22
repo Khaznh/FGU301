@@ -314,6 +314,7 @@ MonoBehaviour:
   mainInvenGroup: {fileID: 0}
   inventoryManager: {fileID: 0}
   shop: {fileID: 0}
+  upgrade: {fileID: 0}
   fishIcon: {fileID: 2690887217080411171}
   fishGamePlay: {fileID: 0}
   iWarn: {fileID: 0}
@@ -321,12 +322,14 @@ MonoBehaviour:
   playerAnimation: {fileID: 0}
   onNearPort: 0
   onNearShop: 0
+  onNearTrading: 0
   playerSpawnBait: {fileID: 0}
   pondTransform: {fileID: 0}
   bait: {fileID: 0}
   animator: {fileID: 0}
   fishingGamePlay: {fileID: 0}
   fishStats: {fileID: 0}
+  moveBarSpeed: 120
 --- !u!114 &7685351820252445398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a8b5e17e1ddc34cbf5f6f646829169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 0
+  currentMoney: 100
+  maxHealth: 10
+  currentHealth: 0
 --- !u!1 &2279118238654406174
 GameObject:
   m_ObjectHideFlags: 0

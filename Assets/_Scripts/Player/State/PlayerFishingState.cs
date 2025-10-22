@@ -14,6 +14,7 @@ public class PlayerFishingState : State
         result = "";
         ((Player)entity).fishGamePlay.SetActive(true);
         ((Player)entity).fishGamePlay.GetComponentInChildren<FishingGamePlay>().fishSpeed = ((Player)entity).fishStats.fishSpeed;
+        ((Player)entity).fishGamePlay.GetComponentInChildren<FishingGamePlay>().moveBarSpeed = ((Player)entity).moveBarSpeed;
         ((Player)entity).fishGamePlay.GetComponentInChildren<FishingGamePlay>().fishChangeDirTimer = ((Player)entity).fishStats.fishChangeDirTimer;
         ((Player)entity).fishGamePlay.GetComponentInChildren<FishingGamePlay>().lostProgress = ((Player)entity).fishStats.lostProgress;
         ((Player)entity).fishGamePlay.GetComponentInChildren<FishingGamePlay>().gainsProgress = ((Player)entity).fishStats.gainsProgress;

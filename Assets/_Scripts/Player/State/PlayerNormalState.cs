@@ -40,6 +40,11 @@ public class PlayerNormalState : State
             fsm.ChangeState(((Player)entity).playerTradingState);
         }
 
+        if (((Player)entity).onNearTrading && ((Player)entity).input.Shoping.Start.WasPressedThisFrame())
+        {
+            fsm.ChangeState(((Player)entity).playerUpgradeState);
+        }
+
         if (((Player)entity).input.Inventory.Inven.WasPressedThisFrame())
         {
             fsm.ChangeState(((Player)entity).playerInventoryState);
