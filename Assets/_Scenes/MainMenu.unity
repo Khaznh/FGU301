@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dcdb5fe8cba334c91a1487d99f46df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeTime: 10
   playerPositionToSpawn: {x: 0, y: 0, z: 0}
 --- !u!4 &388356551
 Transform:
@@ -855,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &705114792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1446,7 +1447,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.4
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1485,9 +1486,9 @@ RectTransform:
   m_Father: {fileID: 705114792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &946382692
 MonoBehaviour:
@@ -1611,9 +1612,9 @@ RectTransform:
   m_Father: {fileID: 705114792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1064998764
 MonoBehaviour:
@@ -1864,7 +1865,7 @@ RectTransform:
   m_Father: {fileID: 1911881627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2780,7 +2781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000009031294}
+  m_AnchoredPosition: {x: 0, y: 0.000006464618}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1470747442
@@ -2952,7 +2953,7 @@ RectTransform:
   m_Father: {fileID: 1849072914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3494,9 +3495,9 @@ RectTransform:
   m_Father: {fileID: 705114792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1887696821
 MonoBehaviour:
@@ -3979,6 +3980,10 @@ MonoBehaviour:
   sfxSounds:
   - name: hehe
     clip: {fileID: 8300000, guid: edbc6e448fabb994bb7f6bbd3fe8b441, type: 3}
+  - name: Water
+    clip: {fileID: 8300000, guid: 5ea4bedb5d8b0314ca51dd807e3d376d, type: 3}
+  - name: Buy
+    clip: {fileID: 8300000, guid: 38b06b51ca0f80b4888908912c02434d, type: 3}
   musicSource: {fileID: 239117211}
   sfxSource: {fileID: 1070248784}
 --- !u!4 &2018003576

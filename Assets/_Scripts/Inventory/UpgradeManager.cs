@@ -1,7 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    public GameObject mapManagerPrefab; 
+    private GameObject mapManagerInstance;
     public void UpgrateStatama()
     {
         if (PlayerMoney.instance.currentMoney >= 50)
@@ -21,6 +23,23 @@ public class UpgradeManager : MonoBehaviour
             PlayerMoney.instance.RemoveMoney(10);
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             player.moveBarSpeed += 10f;
+        }
+    }
+
+    public void BuyMap()
+    {
+        if (PlayerMoney.instance.currentMoney >= 100)
+        {
+            if (mapManagerInstance == null)
+            {
+                mapManagerInstance = Instantiate(mapManagerPrefab);
+            }
+            else
+            {
+                mapManagerInstance.SetActive(true);
+            }
+
+            AudioManager.Instance.PlaySFX("Buy");
         }
     }
 }

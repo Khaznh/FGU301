@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     private string[] arrSeasons = { "SpringScene", "SummerScene", "AutumnScene", "WinnterScene" };
     private float timer = 0.0f;
     private bool firstTime = true;
+    public float changeTime = 10f;
 
     public Vector3 playerPositionToSpawn;
 
@@ -35,7 +36,7 @@ public class GameController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 60 * 4)
+        if (timer > changeTime)
         {
             index++;
             if (index >= arrSeasons.Length)

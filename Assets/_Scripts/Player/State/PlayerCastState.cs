@@ -64,6 +64,7 @@ public class PlayerCastState : State
 
         ((Player)entity).bait = ((Player)entity).playerSpawnBait.SpawnBait(dirToPond * -1);
 
+        AudioManager.Instance.PlaySFX("Water");
         randomTImer = Random.Range(3f, 5f);
 
         ((Player)entity).fishStats = ((Player)entity).pondTransform.gameObject.GetComponent<PondContainer>().GetRandomFish();
