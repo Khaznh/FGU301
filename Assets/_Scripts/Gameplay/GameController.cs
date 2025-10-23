@@ -97,6 +97,12 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("HomeScene");
     }
 
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("VideoIntro");
+        AudioManager.Instance.StopMusic();
+    }
+
     public void ExitGame()
     {
         Application.Quit();

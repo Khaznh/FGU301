@@ -77,7 +77,6 @@ public class PlayerCastState : State
 
         CatchLogic();
     }
-
     private void CatchLogic()
     {
         timer += Time.deltaTime;
@@ -104,6 +103,7 @@ public class PlayerCastState : State
         {
             fsm.ChangeState(((Player)entity).playerNormalState);
         }
+
     }
 
     public override void Exit()
