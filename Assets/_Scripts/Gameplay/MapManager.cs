@@ -2,6 +2,24 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    public static MapManager instance;
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    public void Buymap()
+    {
+        gameObject.SetActive(true);
+    }
+
     // Load Shop
     public void ChangeToHomeScene()
     {

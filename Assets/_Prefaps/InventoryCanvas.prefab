@@ -6969,7 +6969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6c21d12cfbea14fb45c2e1342eba58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapManagerPrefab: {fileID: 9126433751071337624, guid: 5035abf7a3214414ea58d18513e8e609, type: 3}
 --- !u!1 &4743726393596152634
 GameObject:
   m_ObjectHideFlags: 0
@@ -8127,6 +8126,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5558719310158869887}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4922467579126928472}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &5694955320390607903
 GameObject:
