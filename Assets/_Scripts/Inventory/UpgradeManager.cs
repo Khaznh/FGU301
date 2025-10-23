@@ -2,8 +2,7 @@
 
 public class UpgradeManager : MonoBehaviour
 {
-    public GameObject mapManagerPrefab; 
-    private GameObject mapManagerInstance;
+
     public void UpgrateStatama()
     {
         if (PlayerMoney.instance.currentMoney >= 50)
@@ -30,14 +29,8 @@ public class UpgradeManager : MonoBehaviour
     {
         if (PlayerMoney.instance.currentMoney >= 100)
         {
-            if (mapManagerInstance == null)
-            {
-                mapManagerInstance = Instantiate(mapManagerPrefab);
-            }
-            else
-            {
-                mapManagerInstance.SetActive(true);
-            }
+            PlayerMoney.instance.RemoveMoney(100);
+            MapManager.instance.Buymap();
 
             AudioManager.Instance.PlaySFX("Buy");
         }
