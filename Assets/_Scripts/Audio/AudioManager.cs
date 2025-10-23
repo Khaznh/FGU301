@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         PlayMusic("Theme");
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
     }
 
     public void PlayMusic(string name)

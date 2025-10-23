@@ -236,7 +236,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1447,7 +1447,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.4
+          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1733,7 +1733,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2005,7 +2005,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
@@ -3984,6 +3984,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5ea4bedb5d8b0314ca51dd807e3d376d, type: 3}
   - name: Buy
     clip: {fileID: 8300000, guid: 38b06b51ca0f80b4888908912c02434d, type: 3}
+  - name: Reel
+    clip: {fileID: 8300000, guid: b9b907a9c47a38d4c98dbf9e3696c208, type: 3}
   musicSource: {fileID: 239117211}
   sfxSource: {fileID: 1070248784}
 --- !u!4 &2018003576
@@ -4088,7 +4090,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 388356550}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: ChangeToGameSceneFromStart
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
