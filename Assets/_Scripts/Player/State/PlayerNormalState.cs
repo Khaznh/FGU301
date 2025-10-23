@@ -30,6 +30,11 @@ public class PlayerNormalState : State
             }
         }
 
+        if (((Player)entity).input.Pause.Input.WasPressedThisFrame())
+        {
+            PauseEvent.instance.PaseGame();
+        }
+
         if (!((Player)entity).onNearPort)
         {
             ((Player)entity).fishIcon.SetActive(false);
